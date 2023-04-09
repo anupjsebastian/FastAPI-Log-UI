@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  log_service:
+    image: log_service
+    container_name: log_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nas_dir:/nas_dir
+      - ./app:/app
+      - ./log_service:/app/log_service
+    environment:
+      - DB_HOST=db.example.com
+      - DB_PORT=5432
+      - DB_NAME=log_db
+      - DB_USER=log_user
+      - DB_PASSWORD=log_password
+
+
