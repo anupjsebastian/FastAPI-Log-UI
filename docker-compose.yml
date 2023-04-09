@@ -6,9 +6,10 @@ services:
     container_name: log_service
     ports:
       - "8000:8000"
+      - "9000:9000"
     volumes:
       - ./nas_dir:/nas_dir
-      - ./app:/app
+      # - ./app:/app
       - ./log_service:/app/log_service
     environment:
       - DB_HOST=db.example.com
